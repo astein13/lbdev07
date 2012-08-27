@@ -31,7 +31,7 @@
 
     </div>
 
-    <nav>
+  <nav>
 
       <div class="container">
 
@@ -39,14 +39,26 @@
 
            <ul class="admin">
                 <% if current_user %>
+                <% if session[:user_id] %>
+
+
+
                 <li> <%= link_to '+ Create Flier', create_flier_path %></li>
                 <li> <%= link_to current_user.fname + " " + current_user.lname, myboard_path %></li>
                 <li> <%= link_to 'Sign Out', logout_path %> </li>
                 <li class="userimg"><%= image_tag current_user.image_url %></li>
+                <% end %>
+
+                <% if  session[:organization_id] %>
+                <li> <%= link_to '+ Create Flier', create_flier_path %></li>
+                <li> <%= link_to current_user.name, myboard_path %></li>
+                <li> <%= link_to 'Sign Out', logout_path %> </li>
+                <li class="userimg"><%= image_tag current_user.image %></li>
+
                 <% else %>
                 <% end %>
            </ul>
-
+           <%end%>
         </div>
 
             <% liveboardlogo = image_tag('header_logo.png') %>

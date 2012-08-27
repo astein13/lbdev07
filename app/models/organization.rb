@@ -27,5 +27,9 @@ class Organization < ActiveRecord::Base
 
   has_attached_file :image, :styles => { :thumb => "200 x 200", :large => "400 x 400"},
                              :quality => { :thumb => "-quality 80", :large => '-quality 80'}
+  belongs_to :community
 
+  def timezone
+    Time.zone = community.timezone
+  end
 end
