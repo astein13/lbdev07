@@ -15,10 +15,11 @@
                 <div id="crfldata">
 
                     <h1> Create Flier </h1>
-                       <%= form_for @flier, :url => {:action => :create},
+
+                    <%= form_for @flier, :url => {:action => :create},
                           :html => {:multipart => true}, :validate => true do |f| %>
+
                     <div id="crflimg">
-                        
                         <%= f.label 'Upload an Image' %>
                         <%= f.file_field :image %>
                     </div>
