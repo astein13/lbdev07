@@ -52,7 +52,7 @@
                 <% if  session[:organization_id] %>
                 <li> <%= link_to '+ Create Flier', create_flier_path %></li>
                 <li> <%= link_to current_user.name, myboard_path %></li>
-                <li> <%= link_to 'Sign Out', logout_path %> </li>
+                <li> <%= link_to 'Sign Out', org_logout_path %> </li>
                 <li class="userimg"><%= image_tag current_user.image %></li>
 
                 <% else %>
