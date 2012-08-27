@@ -9,14 +9,15 @@ class MyboardController < ApplicationController
       
       
     
-
+    end
     if session[:organization_id]
-      @added_fliers = OrganizationFlier.find_all_by_organization_id_and_attending_status(current_user.id, '1')
-      @created_fliers = OrganizationFlier.find_all_by_organization_id_and_attending_status(current_user.id, '9')
+      
+      #@added_fliers = OrganizationFlier.find_all_by_organization_id_and_attending_status(current_user.id, '1')
+      @created_fliers = current_user.created_fliers
     end
   end
   end
-end
+
 
 
 

@@ -8,7 +8,7 @@
                 <% if @fliers_for_adding.include?(flier) %>
                   <%= button_to 'Add to my Billboard', org_add_flier_path(:flier_id => flier.id), class: "btn fladd" %>
                 <% else %>
-
+                <p>Already added</p>
                 <%end%>
           </div>
            <% end%>

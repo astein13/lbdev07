@@ -1,10 +1,10 @@
 Lbdevelopmentv03::Application.routes.draw do
 
-  get "guestlist/add"
+  #get "guestlist/add"
 
-  get "guestlist/remove"
+  #get "guestlist/remove"
 
-  get "billboard/index"
+  #get "billboard/index"
 
   get "organization_fliers/add"
 

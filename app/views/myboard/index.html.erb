@@ -15,19 +15,21 @@
 
             <h1>My Board</h1>
             <% if session[:user_id] %>
-            <%= render 'user_liveboard' %>
-        <% if session[:organization_id] %>
-
-            <%=  render 'layouts/friends' %>
-            <%= render 'layouts/footer' %>
+              <%= render 'user_myboard' %>
+            <%end%>
+            <% if session[:organization_id] %>
+              <%= render 'org_myboard' %>
+           
+            <% end %>
+            
 
           </div>
 
-        <%end%>
+        
 
 
 
-        <%end%>
+        
 
   </div>
   <div id="footer"><%= render 'layouts/footer' %></div>
