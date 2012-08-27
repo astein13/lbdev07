@@ -26,7 +26,7 @@ class LiveboardController < ApplicationController
 
   if session[:organization_id] #if this is an organization, load all fliers
     @organization = current_user
-    @fliers_for_org_liveboard = current_user.fliers
+    @fliers_for_org_liveboard = Flier.upcoming(Time.zone.now + 7200).in_my_community(current_user.community_id)
     @fliers_not_to_add = current_user.added_fliers + current_user.created_fliers
     @fliers_for_adding = @fliers_for_org_liveboard - @fliers_not_to_add
   end

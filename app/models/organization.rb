@@ -25,8 +25,8 @@ class Organization < ActiveRecord::Base
            :source =>:flier,
            :conditions => ['attending_status=?', '9']
 
-  has_attached_file :image, :styles => { :thumb => "200 x 200", :large => "400 x 400"},
-                             :quality => { :thumb => "-quality 80", :large => '-quality 80'}
+  has_attached_file :image, :styles => { :thumb => "200 x 200", :large => "400 x 400", :tiny => "25 x 25"},
+                            :quality => { :thumb => "-quality 80", :large => '-quality 80', :tiny => '-quality 80'}
   belongs_to :community
 
   def timezone
