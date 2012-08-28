@@ -16,7 +16,11 @@ class FliersController < ApplicationController
     @channels = Channel.all
      @flier = Flier.create!(params[:flier])
      @users = User.find_all_by_community_id(current_user.community_id)
-     @organizations = Organization.find_all_by_community_id(current_user.community_id)
+
+    #create organization
+    if session[:organization_id]
+    @organizations = Organization.find_all_by_community_id(current_user.community_id)
+    end
 
     #create myfliers for each user in the community
      @users.each do |user|

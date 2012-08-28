@@ -5,7 +5,7 @@
       <%unless current_user.added_academic_fliers.empty?%>
       <h3> Academic Fliers:</h3><br/>
           <% current_user.added_academic_fliers.each do |flier| %>
-              <%= flier.image.url(:thumb) %>
+              <%= image_tag  flier.image.url(:thumb) %><br/>
               <%= flier.title %>
            <% end %>
        <%end%>
@@ -13,7 +13,7 @@
        <%unless current_user.added_arts_fliers.empty?%>
         <h3> Arts Fliers: </h3><br/>
           <% current_user.added_arts_fliers.each do |flier| %>
-              <%= flier.image.url(:thumb) %>
+              <%= image_tag flier.image.url(:thumb) %><br/>
               <%= flier.title %>
            <% end %>
        <%end%>
@@ -21,7 +21,7 @@
        <%unless current_user.added_nightlife_fliers.empty?%>
           <h3> Nightlife Fliers: </h3><br/>
           <% current_user.added_nightlife_fliers.each do |flier| %>
-              <%= flier.image.url(:thumb) %>
+              <%= image_tag  flier.image.url(:thumb) %><br/>
               <%= flier.title %>
            <% end %>
        <%end%>
@@ -29,7 +29,7 @@
        <%unless current_user.added_sports_fliers.empty?%>
           <h3> Sports Fliers: </h3><br/>
           <% current_user.added_academic_fliers.each do |flier| %>
-              <%= flier.image.url(:thumb) %>
+              <%= image_tag flier.image.url(:thumb) %><br/>
               <%= flier.title %>
            <% end %>
        <%end%>

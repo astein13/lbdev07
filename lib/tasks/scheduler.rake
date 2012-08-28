@@ -18,7 +18,7 @@ task :update_myscores_for_amherst => :environment do
         if @friends_flier = Myflier.find_by_user_id_and_flier_id(friend.id, flier.id)
           if @friends_flier.attending_status == 1 || 9 || 8
           @friend_count = @friend_count + 1
-        end
+          end
         end
       end
      if flier.added_count != nil
@@ -34,4 +34,11 @@ task :update_myscores_for_amherst => :environment do
   end
 end
 end
+end
+
+task :remove_all_outdated_events => :environment do
+  if Flier.destroy_all(['start_time <?', Time.now])
+    puts 'we did it!'
+
+  end
 end

@@ -1,9 +1,11 @@
- <%= Time.zone.now %><br/>
+<br/>
  <% @fliers_for_liveboard.each do |flier| %>
 
               <div class="fliers shadow">
               <%= image_tag flier.image.url(:thumb), class: "flimg" %>
               <%= link_to  flier.title, show_flier_path(:id => flier.id), class: "fltit" %>
+                <br/>
+              <%= flier.start_time.strftime('%a, %B %d @ %I:%M %p ') %>
               
 
                 <% if @fliers_for_adding.include?(flier) %>

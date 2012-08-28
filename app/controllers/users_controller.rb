@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
    skip_before_filter :has_community?
    skip_before_filter :logged_in_check
+   skip_before_filter :user_time_zone
    
    
   def create
